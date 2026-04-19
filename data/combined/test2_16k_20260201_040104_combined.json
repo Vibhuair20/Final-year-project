@@ -1,0 +1,275 @@
+{
+  "layer1": {
+    "file_id": "test2_16k_20260201_040104",
+    "metadata": {
+      "original_filename": "test2_16k.wav",
+      "file_format": "wav",
+      "file_size_bytes": 381964,
+      "duration_seconds": 11.94,
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "bit_depth": 16,
+      "ingestion_timestamp": "2026-02-01T04:01:04.297477+05:30",
+      "checksum_md5": "74f25924e825f83107fe88ba343b43b6"
+    },
+    "audio_path": "/Users/vibhu/.gemini/antigravity/project/data/input/test2_16k.wav",
+    "status": "ready_for_processing",
+    "version": "1.0"
+  },
+  "layer2": {
+    "file_id": "test2_16k_20260201_040104",
+    "audio_path": "/Users/vibhu/.gemini/antigravity/project/data/input/test2_16k.wav",
+    "features": {
+      "mfcc_mean": [
+        -255.96839904785156,
+        103.90170288085938,
+        29.965503692626953,
+        23.977937698364258,
+        19.743087768554688,
+        -0.7735950946807861,
+        -2.4755403995513916,
+        -0.0983312800526619,
+        -0.18021979928016663,
+        2.658128499984741,
+        -1.7364197969436646,
+        2.317129611968994,
+        -1.1772191524505615
+      ],
+      "mfcc_std": [
+        92.30411529541016,
+        38.301170349121094,
+        20.274354934692383,
+        20.28559112548828,
+        9.31617546081543,
+        13.021759986877441,
+        12.344544410705566,
+        10.022378921508789,
+        8.169049263000488,
+        10.70140552520752,
+        9.239875793457031,
+        6.397172451019287,
+        6.9440765380859375
+      ],
+      "pitch_mean": 284.4576721191406,
+      "pitch_std": 302.3153381347656,
+      "pitch_variance": 91394.5703125,
+      "energy_mean": 0.06735126674175262,
+      "energy_std": 0.04608308896422386,
+      "zero_crossing_rate": 0.06565484668230563,
+      "spectral_centroid_mean": 1381.21236482477,
+      "spectral_rolloff_mean": 2775.3853887399464,
+      "pause_count": 6,
+      "pause_duration_mean": 0.3466666666666665,
+      "speech_rate": 8.574007220216606,
+      "total_speech_duration": 8.864,
+      "total_pause_duration": 2.079999999999999
+    },
+    "transcript": {
+      "full_text": "hello my name is a bullet and i'm twenty one years old thank you i'm currently studying my be dick in computer science and engineering with special edition and information security thank you",
+      "segments": [
+        {
+          "text": "hello",
+          "start_time": 0.42,
+          "end_time": 0.81,
+          "confidence": 1.0
+        },
+        {
+          "text": "my",
+          "start_time": 0.84,
+          "end_time": 1.02,
+          "confidence": 1.0
+        },
+        {
+          "text": "name",
+          "start_time": 1.02,
+          "end_time": 1.23,
+          "confidence": 1.0
+        },
+        {
+          "text": "is",
+          "start_time": 1.23,
+          "end_time": 1.342783,
+          "confidence": 1.0
+        },
+        {
+          "text": "a",
+          "start_time": 1.35,
+          "end_time": 1.44,
+          "confidence": 0.75942
+        },
+        {
+          "text": "bullet",
+          "start_time": 1.44,
+          "end_time": 1.77,
+          "confidence": 0.532592
+        },
+        {
+          "text": "and",
+          "start_time": 1.774123,
+          "end_time": 2.081543,
+          "confidence": 1.0
+        },
+        {
+          "text": "i'm",
+          "start_time": 2.1,
+          "end_time": 2.28,
+          "confidence": 0.949716
+        },
+        {
+          "text": "twenty",
+          "start_time": 2.281509,
+          "end_time": 2.55,
+          "confidence": 1.0
+        },
+        {
+          "text": "one",
+          "start_time": 2.55,
+          "end_time": 2.67,
+          "confidence": 1.0
+        },
+        {
+          "text": "years",
+          "start_time": 2.67,
+          "end_time": 2.94,
+          "confidence": 1.0
+        },
+        {
+          "text": "old",
+          "start_time": 2.94,
+          "end_time": 3.21,
+          "confidence": 1.0
+        },
+        {
+          "text": "thank",
+          "start_time": 3.42,
+          "end_time": 3.72,
+          "confidence": 1.0
+        },
+        {
+          "text": "you",
+          "start_time": 3.72,
+          "end_time": 3.99,
+          "confidence": 1.0
+        },
+        {
+          "text": "i'm",
+          "start_time": 4.68,
+          "end_time": 4.92,
+          "confidence": 0.526836
+        },
+        {
+          "text": "currently",
+          "start_time": 4.92,
+          "end_time": 5.31,
+          "confidence": 1.0
+        },
+        {
+          "text": "studying",
+          "start_time": 5.31,
+          "end_time": 5.64,
+          "confidence": 0.776131
+        },
+        {
+          "text": "my",
+          "start_time": 5.64,
+          "end_time": 5.76,
+          "confidence": 0.665731
+        },
+        {
+          "text": "be",
+          "start_time": 5.780056,
+          "end_time": 5.966123,
+          "confidence": 1.0
+        },
+        {
+          "text": "dick",
+          "start_time": 5.981088,
+          "end_time": 6.33,
+          "confidence": 0.34966
+        },
+        {
+          "text": "in",
+          "start_time": 6.75,
+          "end_time": 6.96,
+          "confidence": 1.0
+        },
+        {
+          "text": "computer",
+          "start_time": 6.96,
+          "end_time": 7.29,
+          "confidence": 1.0
+        },
+        {
+          "text": "science",
+          "start_time": 7.29,
+          "end_time": 7.56,
+          "confidence": 1.0
+        },
+        {
+          "text": "and",
+          "start_time": 7.56,
+          "end_time": 7.68,
+          "confidence": 1.0
+        },
+        {
+          "text": "engineering",
+          "start_time": 7.68,
+          "end_time": 8.19,
+          "confidence": 1.0
+        },
+        {
+          "text": "with",
+          "start_time": 8.19,
+          "end_time": 8.308469,
+          "confidence": 0.581366
+        },
+        {
+          "text": "special",
+          "start_time": 8.308469,
+          "end_time": 8.64,
+          "confidence": 0.660766
+        },
+        {
+          "text": "edition",
+          "start_time": 8.64,
+          "end_time": 9.09,
+          "confidence": 0.660766
+        },
+        {
+          "text": "and",
+          "start_time": 9.09,
+          "end_time": 9.3,
+          "confidence": 0.745501
+        },
+        {
+          "text": "information",
+          "start_time": 9.39,
+          "end_time": 9.87,
+          "confidence": 1.0
+        },
+        {
+          "text": "security",
+          "start_time": 9.87,
+          "end_time": 10.44,
+          "confidence": 1.0
+        },
+        {
+          "text": "thank",
+          "start_time": 10.5,
+          "end_time": 10.77,
+          "confidence": 1.0
+        },
+        {
+          "text": "you",
+          "start_time": 10.77,
+          "end_time": 10.98,
+          "confidence": 1.0
+        }
+      ],
+      "word_count": 33,
+      "language": "en-US"
+    },
+    "processing_timestamp": "2026-02-01T04:01:07.383945+05:30",
+    "version": "2.0"
+  }
+}
