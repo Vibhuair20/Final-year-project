@@ -51,10 +51,12 @@ Run cells top-to-bottom. Expect:
 - **Cell 6** (evaluate): ~2 min — this produces the confusion matrix and ablation table you'll want for your defense.
 - **Cell 7**: zips artifacts and downloads `trained_models.zip`.
 
-**If the dataset download 404s:** the HuggingFace ID in `training/download_dataset.py` is a best-guess (`TeleAntiFraud/TeleAntiFraud-28k`). Check the paper (arxiv 2503.24115) for the actual hosting location. If the name is different, set `TELE_DATASET_ID` as an env var in Colab before cell 3:
-```python
-%env TELE_DATASET_ID=<actual/path>
-```
+**Dataset location:**
+- HuggingFace: [`JimmyMa99/TeleAntiFraud`](https://huggingface.co/datasets/JimmyMa99/TeleAntiFraud)
+- GitHub (paper + code): https://github.com/JimmyMa99/TeleAntiFraud
+- Paper: https://arxiv.org/abs/2503.24115
+
+28,511 speech-text pairs, 307 hours of audio. The download script already points here. If the upstream ID ever changes, override with `%env TELE_DATASET_ID=<new/path>` in Colab before cell 3.
 
 ### 4. Drop the trained models back in
 

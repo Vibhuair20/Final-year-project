@@ -18,7 +18,7 @@ from datasets import load_dataset
 from src.layer2_processor import Layer2Processor
 
 
-DATASET_ID = os.environ.get("TELE_DATASET_ID", "TeleAntiFraud/TeleAntiFraud-28k")
+DATASET_ID = os.environ.get("TELE_DATASET_ID", "JimmyMa99/TeleAntiFraud")
 CACHE_DIR = Path("data/tele_antifraud")
 PROCESSED_DIR = CACHE_DIR / "processed"
 
