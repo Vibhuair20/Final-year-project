@@ -57,3 +57,13 @@ htmlcov/
 # Temporary files
 *.tmp
 *.bak
+
+# Layer 3
+data/tele_antifraud/
+models/text_classifier.joblib
+models/acoustic_classifier.joblib
+models/fusion_classifier.joblib
+models/text_vocab.json
+models/acoustic_importance.json
+models/sentence_encoder/
+reports/
