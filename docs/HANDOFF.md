@@ -26,7 +26,7 @@ pip install -r requirements.txt -r requirements_layer2.txt -r requirements_layer
 
 Verify:
 ```bash
-pytest tests/ -v    # should show 14 passed
+pytest tests/ -v    # should show 28 passed
 ```
 
 ### 2. Download the Vosk ASR model (one-time)
@@ -40,21 +40,25 @@ cd ..
 
 ### 3. Train the models on Colab
 
-Open `notebooks/train_colab.ipynb` in Google Colab (free tier is fine, pick a T4 GPU runtime).
+Open `notebooks/train_colab.ipynb` in Google Colab. Runtime → Change runtime type → **T4 GPU**.
 
-In cell 1, replace `REPLACE_ME` with your GitHub repo URL (or upload the repo manually).
+In **cell 2**, replace `REPLACE_WITH_YOUR_REPO_URL` with your GitHub repo URL.
 
 Run cells top-to-bottom. Expect:
-- **Cells 1–3** (setup + dataset download): ~5 min
-- **Cell 4** (prep — runs ASR on 28k clips): **several hours**. Sleep on it. It's resume-safe, so Colab disconnects don't erase progress — just re-run the cell.
-- **Cell 5** (train): ~10 min
-- **Cell 6** (evaluate): ~2 min — this produces the confusion matrix and ablation table you'll want for your defense.
-- **Cell 7**: zips artifacts and downloads `trained_models.zip`.
+- **Cells 1–3** (Drive mount + env setup): ~5 min
+- **Cell 4** (dataset download): ~5 min
+- **Cell 5** (prep — runs ASR on 28k clips): **several hours**. Sleep on it. It's resume-safe — Colab disconnects don't erase progress. Re-run cells 1–3 to restore the environment after reconnect, then re-run cell 5 and it picks up where it stopped.
+- **Cell 6** (train all 3 classifiers): ~10–15 min
+- **Cell 7** (evaluate): ~2 min — produces the confusion matrix and ablation table.
+- **Cell 8**: prints the ablation table inline.
+- **Cell 9**: zips artifacts and triggers a browser download of `trained_models.zip`.
 
-**If the dataset download 404s:** the HuggingFace ID in `training/download_dataset.py` is a best-guess (`TeleAntiFraud/TeleAntiFraud-28k`). Check the paper (arxiv 2503.24115) for the actual hosting location. If the name is different, set `TELE_DATASET_ID` as an env var in Colab before cell 3:
-```python
-%env TELE_DATASET_ID=<actual/path>
-```
+**Dataset location:**
+- HuggingFace: [`JimmyMa99/TeleAntiFraud`](https://huggingface.co/datasets/JimmyMa99/TeleAntiFraud)
+- GitHub (paper + code): https://github.com/JimmyMa99/TeleAntiFraud
+- Paper: https://arxiv.org/abs/2503.24115
+
+28,511 speech-text pairs, 307 hours of audio. The download script already points here. If the upstream ID ever changes, override with `%env TELE_DATASET_ID=<new/path>` in Colab before cell 3.
 
 ### 4. Drop the trained models back in
 
@@ -121,7 +125,7 @@ The **top keywords** and **top acoustic drivers** on a sample prediction give yo
 
 ## If something breaks
 
-- **Tests fail locally:** `pytest tests/ -v` — if any of the 14 break, something in the environment drifted. Reinstall deps.
+- **Tests fail locally:** `pytest tests/ -v` — if any of the 28 break, something in the environment drifted. Reinstall deps.
 - **`python pipeline.py` says "Layer 3 models not found":** you haven't unzipped `trained_models.zip` into the repo root yet. That's Step 4.
 - **Vosk errors:** the model isn't in `models/vosk-model-small-en-us-0.15/`. Re-run Step 2.
 - **Audio errors:** input wasn't 16kHz mono 16-bit WAV. Run it through `resample.py` first.
@@ -149,7 +153,7 @@ training/
   train_fusion.py           Trains fusion meta-classifier
   evaluate.py               Confusion matrix + ablation table
 
-tests/                      14 unit tests, all green
+tests/                      28 unit tests, all green
 notebooks/train_colab.ipynb Colab training notebook
 layer3_main.py              Single-file CLI
 pipeline.py                 Full L1+L2+L3 pipeline

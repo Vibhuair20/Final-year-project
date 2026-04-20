@@ -44,8 +44,14 @@ Dataset: [TeleAntiFraud-28k](https://arxiv.org/abs/2503.24115).
 
 Audio must be 16kHz, mono, 16-bit WAV. Use `python resample.py input.wav output_16k.wav` to convert.
 
+### Layer 4 — Dashboard
+```bash
+streamlit run streamlit_app.py
+```
+Upload any WAV, get a fraud verdict with colour-coded transcript, class probability chart, keyword chips, and acoustic driver chips. Requires trained Layer 3 models (`models/*.joblib`).
+
 ## Tests
 
 ```bash
-pytest tests/ -v
+pytest tests/ -v   # 28 tests
 ```
