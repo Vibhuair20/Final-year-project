@@ -24,7 +24,13 @@ PROCESSED_DIR = CACHE_DIR / "processed"
 
 
 def prepare(split: str, limit=None):
-    ds = load_dataset(DATASET_ID, split=split, cache_dir=str(CACHE_DIR))
+    hf_split = split
+    if split == "validation":
+        hf_split = "train[-400:]"
+    elif split == "train":
+        hf_split = "train[:-400]"
+        
+    ds = load_dataset(DATASET_ID, split=hf_split, cache_dir=str(CACHE_DIR))
     processor = Layer2Processor()
     out_dir = PROCESSED_DIR / split
     out_dir.mkdir(parents=True, exist_ok=True)
