@@ -1,12 +1,6 @@
 CLASS_LABELS = [
-    "legitimate",
-    "phishing",
-    "banking",
-    "investment",
-    "kidnapping",
-    "lottery",
-    "customer_service",
-    "identity_theft",
+    "normal",
+    "fraud",
 ]
 
 N_CLASSES = len(CLASS_LABELS)
